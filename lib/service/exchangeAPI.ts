@@ -17,8 +17,8 @@ export const exchangeCurrency = async (credentials) => {
   return { ...query, rate: info.rate, result };
 };
 
-export const latestRates = async (baseCurrency) => {
-  const { data } = await instance.get(`/latest?symbols&base=${baseCurrency}`);
+export const latestRates = async (userCurrency) => {
+  const { data } = await instance.get(`/latest?symbols&base=${userCurrency}`);
 
   return Object.entries(data.rates);
 };
