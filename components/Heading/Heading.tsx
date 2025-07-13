@@ -1,6 +1,14 @@
 import styles from './Heading.module.css';
 
-export default function Heading({ title, top, bottom, error, info }) {
+export type HeadingProps = {
+  title: string;
+  top: string;
+  bottom: string;
+  error: string;
+  info: string;
+};
+
+export default function Heading({ title, top, bottom, error, info }: HeadingProps) {
   let className = styles.title;
 
   if (top) className += ` ${styles.top}`;
